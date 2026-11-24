@@ -1,3 +1,7 @@
+- I'm using DataTestIDs but lot of people recommend getByRole and filter to text because it is more robust against code change. But if we generate testIDs automaticall it should be the fastest way to find an element.
+- In the checkout process the cart item test ID is inventory-item but the class is cart_item. Why it is differ if everywhere else same
+- Opening the /inventory page throw an login error immidiatelly
+
 Case 1 – Automate Purchase Process
 
 Open the url XXX
