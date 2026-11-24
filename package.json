@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Case 1 – Automate Purchase Process",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/atoth3/Gsys_hw_TA.git"
