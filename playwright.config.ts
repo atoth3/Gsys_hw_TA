@@ -42,5 +42,13 @@ export default defineConfig({
         baseURL: 'https://onlinehtmleditor.dev',
       },
     },
+    {
+      name: 'guru99',
+      testDir: './guru99',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://demo.guru99.com/test/guru99home/',
+      },
+    },
   ],
 });

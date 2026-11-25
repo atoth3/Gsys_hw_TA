@@ -6,7 +6,8 @@
   "scripts": {
     "test": "playwright test",
     "test:saucedemo": "playwright test --project=saucedemo",
-    "test:editor": "playwright test --project=onlinehtmleditor"
+    "test:editor": "playwright test --project=onlinehtmleditor",
+    "test:guru99": "playwright test --project=guru99"
   },
   "repository": {
     "type": "git",
