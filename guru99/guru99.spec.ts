@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+test.skip(!!process.env.CI, 'Blocked by Cloudflare bot protection – see README');
+
 test('guru99', async ({ page }) => {
   await page.goto('', { waitUntil: 'commit'});
 
