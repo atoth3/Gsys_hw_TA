@@ -4,13 +4,11 @@ export class InventoryPage {
   readonly page: Page;
   readonly container: Locator;
   readonly items: Locator;
-  readonly termsOfSevice: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.container = page.getByTestId('inventory-container');
     this.items = page.getByTestId('inventory-item');
-    this.termsOfSevice = page.getByTestId('footer-copy')
   }
 
   async expectLoaded() {

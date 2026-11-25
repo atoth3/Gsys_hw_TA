@@ -6,7 +6,6 @@ export type Credentials = {
   password: string;
 };
 
-const credentialsPath = path.join(__dirname, '..', 'credentials.json');
+const credentialsPath = path.join(__dirname, '..', 'tests', 'resources', 'credential.json');
 
-/** Login credentials read from credentials.json in the project root. */
 export const credentials: Credentials = JSON.parse(fs.readFileSync(credentialsPath, 'utf-8'));

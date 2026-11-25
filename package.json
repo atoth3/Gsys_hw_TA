@@ -1,8 +1,8 @@
 {
   "name": "gsys_hw_ta",
   "version": "1.0.0",
-  "description": "Case 1 – Automate Purchase Process",
-  "main": "index.js",
+  "description": "Playwright + TypeScript homework: UI tests (SauceDemo, Online HTML Editor, Guru99) and REST API tests (JSONPlaceholder)",
+  "private": true,
   "scripts": {
     "test": "playwright test",
     "test:saucedemo": "playwright test --project=saucedemo",
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/atoth3/Gsys_hw_TA#readme",
   "devDependencies": {
-    "@playwright/test": "^1.39.0",
+    "@playwright/test": "1.39.0",
     "@types/node": "^26.6.6"
   }
 }

@@ -19,7 +19,6 @@ export class CheckoutPage {
   readonly finishButton: Locator;
 
   readonly completeHeader: Locator;
-  readonly backHomeButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -33,7 +32,6 @@ export class CheckoutPage {
     this.finishButton = page.getByTestId('finish');
 
     this.completeHeader = page.getByTestId('complete-header');
-    this.backHomeButton = page.getByTestId('back-to-products');
   }
 
   async fillCustomerInformation(info: CustomerInfo) {

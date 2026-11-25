@@ -1,7 +1,7 @@
 import { expect, test } from '../fixtures/pages';
 import { credentials } from '../utils/credentials';
 
-test('purchase flow', async ({ loginPage, inventoryPage, cartPage, checkoutPage }) => {
+test('Case 1 – Automate purchase process', async ({ loginPage, inventoryPage, header, cartPage, checkoutPage }) => {
   // Login
   await loginPage.goto();
   await loginPage.login(credentials.username, credentials.password);
@@ -13,10 +13,11 @@ test('purchase flow', async ({ loginPage, inventoryPage, cartPage, checkoutPage 
     await inventoryPage.addToCart(product);
   }
 
-  await cartPage.expectBadgeCount(products.length);
+  await header.expectCartBadgeCount(products.length);
 
   // Cart
-  await cartPage.open();
+  await header.openCart();
+  await cartPage.expectLoaded();
   await cartPage.expectItems(products);
 
   // Checkout
@@ -26,24 +27,23 @@ test('purchase flow', async ({ loginPage, inventoryPage, cartPage, checkoutPage 
 
   await checkoutPage.expectOverviewLoaded();
   await checkoutPage.expectItems(products);
-  await checkoutPage.finishButton.click()
+  await checkoutPage.finishButton.click();
 
-  //Completed
+  // Completed
   await checkoutPage.expectOrderComplete();
 });
 
-test('login without credential', async ({ loginPage }) => {
+test('Case 2 – Error message for mandatory login fields', async ({ loginPage }) => {
   await loginPage.goto();
   await loginPage.loginButton.click();
 
   await expect(loginPage.errorMessage).toHaveText('Epic sadface: Username is required');
 });
 
-test('terms of service validation', async ({ loginPage, inventoryPage }) => {
+test('Case 2 – Footer contains the year and Terms of Service', async ({ loginPage, footer }) => {
   await loginPage.goto();
   await loginPage.login('standard_user', 'secret_sauce');
-  
-  await expect(inventoryPage.termsOfSevice).toContainText('2026');
-  await expect(inventoryPage.termsOfSevice).toContainText('Terms of Service');
 
+  await expect(footer.termsOfService).toContainText('2026');
+  await expect(footer.termsOfService).toContainText('Terms of Service');
 });
