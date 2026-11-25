@@ -10,5 +10,5 @@
     "noEmit": true,
     "types": ["node", "@playwright/test"]
   },
-  "include": ["saucedemo/**/*.ts", "onlinehtmleditor/**/*.ts", "guru99/**/*.ts","playwright.config.ts"]
+  "include": ["saucedemo/**/*.ts", "onlinehtmleditor/**/*.ts", "guru99/**/*.ts", "jsonplaceholder/**/*.ts", "playwright.config.ts"]
 }

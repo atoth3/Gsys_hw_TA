@@ -50,5 +50,17 @@ export default defineConfig({
         baseURL: 'https://demo.guru99.com/test/guru99home/',
       },
     },
+    {
+      /* API tests – uses the `request` fixture, no browser is launched */
+      name: 'jsonplaceholder',
+      testDir: './jsonplaceholder',
+      use: {
+        baseURL: 'https://jsonplaceholder.typicode.com',
+        extraHTTPHeaders: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      },
+    },
   ],
 });

@@ -7,7 +7,8 @@
     "test": "playwright test",
     "test:saucedemo": "playwright test --project=saucedemo",
     "test:editor": "playwright test --project=onlinehtmleditor",
-    "test:guru99": "playwright test --project=guru99"
+    "test:guru99": "playwright test --project=guru99",
+    "test:api": "playwright test --project=jsonplaceholder"
   },
   "repository": {
     "type": "git",
