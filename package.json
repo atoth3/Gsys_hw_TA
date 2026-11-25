@@ -4,7 +4,9 @@
   "description": "Case 1 – Automate Purchase Process",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:saucedemo": "playwright test --project=saucedemo",
+    "test:editor": "playwright test --project=onlinehtmleditor"
   },
   "repository": {
     "type": "git",
